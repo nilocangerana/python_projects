@@ -16,5 +16,5 @@ def division():
 
 if args.Division:
   print("The division: "+division())
-else
+else:
   print("Comand not received")
