@@ -24,7 +24,7 @@ except getopt.error as err:
     
 def Somar():
     total=0
-    for i in sum_values:
+    for i in range(len(sum_values):
         total=total+sum_values[i]
     return str(total)
     
