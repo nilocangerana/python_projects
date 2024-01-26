@@ -4,18 +4,14 @@ import argparse
 from emoji import demojize #pip install emoji
 
 #Variáveis
-@Dataclass
+@dataclass
 class Config:
-    server = 'irc.chat.twitch.tv'
-    port = 6667
-    nickname # '<your_twitch_nickname>' #o nome da conta na Twitch
-    token # '<twitch_token>' #gerar no link: https://twitchapps.com/tmi/
-    channel # '#<channel_name>' #Nome do canal da twitch
-    
     def __init__(self, nickname, token, channel_name):
-       self.nickname=nickname
-       self.token=token
-       self.channel="#"+channel_name
+        self.server='irc.chat.twitch.tv'
+        self.port = 6667
+        self.nickname=nickname #'<your_twitch_nickname>' #o nome da conta na Twitch
+        self.token=token #'<twitch_token>' #gerar no link: https://twitchapps.com/tmi/
+        self.channel="#"+channel_name  #'#<channel_name>' #Nome do canal da twitch
        
        
 def enable_connection(config):
