@@ -71,7 +71,10 @@ def main(args):
         elif len(resp) > 0:
           demote_resp = demojize(resp)
           raw_text = demote_resp.split(f"#{args.channel_name} :")
-          print("Chat: ",raw_text[1])
+          try:
+            print("Chat: ",raw_text[1])
+          except:
+            print(demote_resp)
     
     except KeyboardInterrupt:
         sock.close()
