@@ -12,7 +12,7 @@ class Config:
     token # '<twitch_token>' #gerar no link: https://twitchapps.com/tmi/
     channel # '#<channel_name>' #Nome do canal da twitch
     
-   def __init__(self, nickname, token, channel_name):
+    def __init__(self, nickname, token, channel_name):
        self.nickname=nickname
        self.token=token
        self.channel="#"+channel_name
