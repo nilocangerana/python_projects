@@ -2,6 +2,7 @@
 import socket
 import argparse
 from emoji import demojize #pip install emoji
+from dataclasses import dataclass
 
 #Variáveis
 @dataclass
