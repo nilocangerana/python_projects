@@ -63,6 +63,7 @@ def parse_args(input_args=None):
 def main(args):
     config = Config(args.twitch_nickname, args.token, args.channel_name)
     sock = enable_connection(config)
+    channel_connected = args.channel_name.lower()
     try:
       while True:
         resp = sock.recv(2048).decode('utf-8')
@@ -70,7 +71,7 @@ def main(args):
           sock.send("PONG\n".encode('utf-8'))
         elif len(resp) > 0:
           demote_resp = demojize(resp)
-          raw_text = demote_resp.split(f"#{args.channel_name} :")
+          raw_text = demote_resp.split(f"#{channel_connected} :")
           try:
             print("Chat: ",raw_text[1])
           except:
